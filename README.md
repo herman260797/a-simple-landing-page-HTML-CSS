@@ -50,4 +50,4 @@ We provide the required social icons. But, if you prefer, you can use a font ico
 
 # CONTACT ME 
 
-hermanngumbu@gmail.com 
+hermanngumbu@gmail.com
