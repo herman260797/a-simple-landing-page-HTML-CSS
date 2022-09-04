@@ -17,11 +17,8 @@ White: hsl(0, 0%, 100%) */
     box-sizing: border-box;
     font-size: 18px;
     font-weight: 700, 900;
+    font-family: "Barlow", Fraunces, serif;
 }
-
-
-/* 
-Family: Barlow Weights: 600 Family: Fraunces  */
 
 h1 {
     color: hsl(0, 0%, 100%);
