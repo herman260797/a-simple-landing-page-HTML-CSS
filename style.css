@@ -1,130 +1,523 @@
+/* Primary
+Soft red: hsl(7, 99%, 70%)
+Yellow: hsl(51, 100%, 49%)
+Dark desaturated cyan (graphic design text): hsl(167, 40%, 24%)
+Dark blue (photography text): hsl(198, 62%, 26%)
+Dark moderate cyan (footer): hsl(168, 34%, 41%)
+Neutral
+Very dark desaturated blue: hsl(212, 27%, 19%)
+Very dark grayish blue: hsl(213, 9%, 39%)
+Dark grayish blue: hsl(232, 10%, 55%)
+Grayish blue: hsl(210, 4%, 67%)
+White: hsl(0, 0%, 100%) */
 
 * {
-  
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-weight: 700, 900;
 }
-img{
-  max-width: 100%;
-  height: auto;
+
+
+/* 
+Family: Barlow Weights: 600 Family: Fraunces  */
+
+h1 {
+    color: hsl(0, 0%, 100%);
+    font-size: 60px;
+}
+
+h2 {
+    color: hsl(213, 9%, 39);
+    font-weight: 600;
+    font-size: 50px;
+}
+
+p {
+    color: hsl(60, 2%, 10%);
+    font-size: 16px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: hsl(60, 4%, 5%)(213, 9%, 39%)
+}
+
+li {
+    list-style-type: none;
 }
 
 body {
-  background-color: hsl(0, 0%, 100%)
-  
-}
-.content {
-  padding: 0 20px;
+    background-color: hsl(0, 0%, 100%)
 }
 
 header {
-  background-image: url(images/mobile/image-header.jpg);
-  background-size: cover;
-  background-repeat:no-repeat;
-  background-position:center;
-  height: 500px;
-  width: 100%;
+    background-image: url(images/mobile/image-header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
+    width: 100%;
 }
 
-.logo img{
-  padding-top: 30px;
-  float: inline-start;
-  position: fixed;
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 160px 20px 100px;
 }
 
-.down{
-  display: flex;
-  justify-content: center;
-  padding-top: 260px;
+.title {
+    margin: 30px;
+    text-align: center;
 }
 
-.title{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    color: hsl(0, 0%, 100%);
 }
 
-.toggler {
-  color: white;
-  cursor:pointer;
-  position: fixed;
-  top: 30px;
-  right: 50px;
+.nav-links a {
+    color: hsl(0, 0%, 100%);
 }
 
-nav {
-  width: 100%;
-  display: none;
+
+/* LOGO */
+
+.logo {
+    font-size: 32px;
 }
 
-nav ul {
-  list-style: none;
-  padding-top: 20px;
+
+/* NAVBAR MENU */
+
+.menu {
+    display: flex;
+    gap: 1em;
+    font-size: 18px;
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: #F2F2F2;
-  font-size: 18px;
-  line-height: 40px;
-  transition: 0.3s ease-out;
+.menu li:hover {
+    background-color: hsl(51, 100%, 49%);
+    border-radius: 5px;
+    transition: 0.3s ease;
 }
 
-nav ul li a:hover {
-  color: hsl(51, 100%, 49%);
+.menu li {
+    padding: 5px 14px;
 }
 
-.active {
-  color: black;
-  background-color: #F2F2F2;
-  border: 1px solid white;
-  border-radius: 30%;
-  padding: 10px 14px;
+input[type=checkbox] {
+    display: none;
+}
+
+
+/*HAMBURGER MENU*/
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+}
+
+
+/* APPLYING MEDIA QUERIES */
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        position: absolute;
+        background-color: hsl(0, 0%, 100%);
+        color: black;
+        right: 54px;
+        left: 54px;
+        text-align: center;
+        padding: 117px 0;
+    }
+    .menu li:hover {
+        display: inline-block;
+        background-color: hsl(51, 100%, 49%);
+        transition: 0.3s ease;
+    }
+    .menu li+li {
+        margin-top: 12px;
+    }
+    input[type=checkbox]:checked~.menu {
+        display: block;
+    }
+    .hamburger {
+        display: block;
+    }
+    .nav-links a {
+        color: black;
+    }
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, minmax(400px, auto));
+    grid-template-areas: "a a a b b b" "c c c d d d" "e e e f f f";
+}
+
+#container>* {
+    text-align: justify;
+    text-transform: capitalize;
+}
+
+#container h2 {
+    padding-left: 50px;
+    padding-top: 120px;
+    text-align: justify;
+    font-style: normal;
+    color: hsl(60, 4%, 5%);
+}
+
+h2 {
+    color: hsl(213, 9%, 39);
+    font-weight: 600;
+    font-size: 30px;
+}
+
+#container p {
+    padding-left: 50px;
+    text-align: justify;
+    font-style: italic;
+    color: hsl(60, 2%, 10%);
+}
+
+#container a {
+    padding-left: 50px;
+    text-align: justify;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 200;
+    color: hsl(60, 4%, 5%);
+    ;
+}
+
+.a {
+    grid-area: a;
+}
+
+.b {
+    grid-area: b;
+    background-image: url(images/desktop/image-transform.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.c {
+    grid-area: c;
+    background-image: url(images/desktop/image-stand-out.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.d {
+    grid-area: d;
+}
+
+.e {
+    grid-area: e;
+    background-image: url(images/desktop/image-graphic-design.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.f {
+    grid-area: f;
+    background-image: url(images/desktop/image-photography.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat
 }
 
 @media screen and (min-width: 768px) {
-  
-  .content {
-    padding: 0 50px;
-  }
-  
-  .toggler {
-    display: none;
-  }
-  
-  nav {
-    display: inline-block !important; /* prevent the nav to hide when resize */
-    position: relative;
-    width: auto;
-    float: right;
-    padding: 5px 0;
-  }
- 
-  nav ul {
-    float: left;
-  }
-  
-  nav ul li {
-    display: inline-block;
-    padding-right: 20px;
-  }
-  
-  header {
-    background-image: url(images/desktop/image-header.jpg);
-    background-size: cover;
-    background-repeat:no-repeat;
-    background-position: center;
-    height: 700px;
-    width: 100%;
-  }
+    header {
+        background-image: url(images/desktop/image-header.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 700px;
+        width: 100%;
+    }
+    .down {
+        display: flex;
+        align-items: center;
+    }
+    .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 150px 10px 60px;
+        width: 100%;
+    }
+    .title {
+        text-align: center;
+    }
+}
 
-  .down{
+@media screen and (max-width:767px) {
+    #container {
+        grid-template-areas: "b b b b b b" "a a a a a a" "c c c c c c" "d d d d d d" "e e e e e e" "f f f f f f"
+    }
+    .b {
+        background-image: url(images/mobile/image-transform.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .c {
+        background-image: url(images/mobile/image-stand-out.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .e {
+        background-image: url(images/mobile/image-graphic-design.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .f {
+        background-image: url(images/mobile/image-photography.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    #container>* {
+        text-align: center;
+        text-transform: capitalize;
+    }
+    #container h2 {
+        padding-top: 120px;
+        text-align: center;
+    }
+    #container p {
+        text-align: center;
+    }
+    #container a {
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+}
+
+.testimonials {
     display: flex;
-    justify-content: center;
-    padding-top: 280px;
-    padding-left: 350px;
-  }
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
+figure.snip1390 {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    min-width: 230px;
+    max-width: 315px;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    padding: 30px;
+}
+
+figure.snip1390 figcaption {
+    width: 100%;
+}
+
+figure.snip1390 h2,
+figure.snip1390 h4 {
+    margin: 0;
+}
+
+figure.snip1390 h2,
+figure.snip1390 h4 {
+    font-weight: 300;
+}
+
+figure.snip1390 h2 {
+    color: black;
+}
+
+figure.snip1390 h4 {
+    color: black;
+}
+
+figure.snip1390 .profile {
+    width: 100px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.title_client {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: hsl(213, 9%, 39);
+    font-weight: 600;
+    font-size: 50px;
+}
+
+@media screen and (max-width:767px) {
+    .testimonials {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+#project {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, minmax(200px, auto));
+    grid-template-areas: "image1 image2 image3 image4";
+}
+
+#project>* {
+    width: 100%;
+}
+
+.img_1 {
+    grid-area: image1;
+}
+
+.img_2 {
+    grid-area: image2;
+}
+
+.img_3 {
+    grid-area: image3;
+}
+
+.img_4 {
+    grid-area: image4;
+}
+
+#project2 {
+    display: none;
+}
+
+@media screen and (max-width: 767px) {
+    #project {
+        display: none;
+    }
+    #project2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        grid-template-areas: "image1 image2" "image3 image4";
+    }
+    #project2>* {
+        width: 100%;
+    }
+}
+
+.nav_down {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    top: 10px;
+}
+
+.nav_down ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.nav_down li {
+    padding: 5px 14px;
+}
+
+.nav_down a {
+    color: hsl(168, 48%, 32%);
+    padding: auto;
+}
+
+
+/* Style all font awesome icons */
+
+.fa {
+    font-size: 40px;
+    width: 70px;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+/* Add a hover effect if you want */
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+
+/* Set a specific color for each brand */
+
+
+/* Facebook */
+
+.fa-facebook {
+    color: hsl(168, 48%, 32%);
+}
+
+
+/* Instagram */
+
+.fa-instagram {
+    color: hsl(168, 48%, 32%);
+}
+
+
+/* Twitter */
+
+.fa-twitter {
+    color: hsl(168, 48%, 32%);
+}
+
+
+/* Pinterest */
+
+.fa-pinterest {
+    color: hsl(168, 48%, 32%);
+}
+
+.footer {
+    background-color: hsl(168, 18%, 55%);
+    width: 100%;
+    height: 300px;
+}
+
+.logo-footer {
+    color: hsl(168, 48%, 32%);
+    text-align: center;
+    padding-top: 40px;
+}
+
+.social {
+    position: relative;
+    top: 60px;
+    text-align: center;
 }
